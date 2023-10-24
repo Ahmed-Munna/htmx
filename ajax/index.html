@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMX</title>
+    <script src="core/htmx.min.js"></script>
+</head>
+<body>
+
+    <div hx-get="/mouse_entered" hx-trigger="mouseenter">
+        Hello world
+    </div>
+    
+
+
+
+<script>
+fetch("http://localhost/php/__new/__oop/rest%20api/crud/all-users.php", {
+    method: "GET",
+})
+    .then((response) => response.json())
+    .then(function(data) {
+
+        for (let elements of data) {
+            for (const prop in elements) {
+                console.log(`${prop} => ${elements[prop]}`);
+            }
+            console.log("\n");
+        }
+    }) 
+    .catch(function(err) {
+
+        console.log("Error: " . err);
+    })
+
+    
+
+</script>
+</body>
+</html>
